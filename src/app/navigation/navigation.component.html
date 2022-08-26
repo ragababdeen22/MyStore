@@ -1,0 +1,13 @@
+<div id="nav-container">
+    <div class="header">My Store 
+    <ul>
+        <a class="navigation-item" routerLink="/">ProductList</a>
+        <a class="navigation-item" routerLink="/cart">Cart({{ cartCount }})</a>
+        <a class="navigation-item" routerLink="/addProduct" *ngIf="loggedInUser.is_admin">Add new product</a>
+    </ul>
+</div>
+</div>
+<div class="login-container">
+    <app-login *ngIf="this.backendConnectionServie.isConnectedToBackend"></app-login>
+    <p class="login-name" *ngIf="loggedIn">Logged in as <a routerLink="/userpage">{{ loggedInUser.first_name + " " + loggedInUser.last_name}}</a></p>
+</div>
